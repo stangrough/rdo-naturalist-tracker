@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Red Dead Online naturalist sample tracker - runs fully offline in your browser." />
+  <title>RDO Naturalist Tracker</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🦌 <span data-i18n="app_title"></span></h1>
+    <div class="search">
+      <input id="q" type="search" autocomplete="off" aria-label="search" data-i18n-placeholder="search_placeholder" />
+    </div>
+    <button type="button" class="clock" id="clock">
+      <span class="clock-icon" id="clockIcon" aria-hidden="true"></span>
+      <span class="clock-time" id="clockTime">--:--</span>
+      <span class="clock-label" data-i18n="clock"></span>
+    </button>
+    <label class="lang">
+      <span data-i18n="language"></span>
+      <select id="lang"></select>
+    </label>
+  </header>
+
+  <nav class="tabs" id="views" aria-label="views"></nav>
+
+  <section class="timers" id="timers"></section>
+
+  <main>
+    <div id="results" class="panels"></div>
+    <div id="empty" class="empty" hidden data-i18n="no_results"></div>
+  </main>
+
+  <footer>
+    <span class="storage" data-i18n="storage"></span>
+    <button type="button" id="export" data-i18n="export_file" data-i18n-title="export_file_hint"></button>
+    <button type="button" id="import" data-i18n="import_file" data-i18n-title="import_file_hint"></button>
+    <input type="file" id="importFile" accept="application/json,.json" hidden />
+    <button type="button" id="reset" class="danger" data-i18n="reset"></button>
+  </footer>
+
+  <!-- Everything is local: no CDN, no API, no tracking. -->
+  <script src="data/catalog.js"></script>
+  <script src="languages/en.js"></script>
+  <script src="languages/pl.js"></script>
+  <script src="assets/logic.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

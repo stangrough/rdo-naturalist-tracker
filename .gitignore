@@ -1,0 +1,6 @@
+# dev server binary (go build ./...)
+/serve
+/rdo-server
+
+# python cruft
+__pycache__/
